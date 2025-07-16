@@ -6,8 +6,11 @@ import PostDetails from './pages/PostDetails'
 import CreatePost from './pages/CreatePost'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
+import { useContext } from 'react'
+import { userContext } from './contexts/UserSignupContext'
 
 function App() {
+   const {isLoggedIn} = useContext(userContext)
   return (
     <div className='w-full min-h-screen'>
       <Routes>
