@@ -7,21 +7,3 @@ export const fetchAllPosts = ()=>{
     })
     return query
 }
-
-
-// async function fetchAllPosts(url:string){  // function to fetch all posts
-//     try{
-//           const response = await fetch(url)
-//           if(!response.ok){
-//             const result = await response.json()
-//             alertMessage(`${result.message}`, "red");
-//             return
-//           } 
-//         const result = await response.json()
-//         renderAllPosts(result)
-//         return result
-       
-//     }catch{
-//         alertMessage("Failed to fetch posts", "red")
-//     }
-// }

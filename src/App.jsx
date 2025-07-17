@@ -8,6 +8,8 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 import { useContext } from 'react'
 import { userContext } from './contexts/UserSignupContext'
+import EditPost from './pages/EditPost'
+import PostLayout from './templates/PostLayout'
 
 function App() {
    const {isLoggedIn} = useContext(userContext)
@@ -18,7 +20,10 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='signup' element={<Signup />} />
           <Route path='login' element={<Login />} />
-          <Route path='postdetails/:id' element={<PostDetails />} />
+          <Route>
+            <Route  path='/postdetails/:id' element={<PostDetails />} />
+            <Route path='/postdetails/:id/edit' element={<EditPost />} />
+          </Route>
           <Route path='createpost' element={<CreatePost />} />
         </Route>
       </Routes>

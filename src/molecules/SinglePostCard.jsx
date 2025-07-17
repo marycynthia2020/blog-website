@@ -12,9 +12,9 @@ const SinglePostCard = ({foundPost, handleDelete, handleEdit, userId}) => {
             <p className="text-[#333333B3] tracking-wide leading-8 text-[#67748E] ">{foundPost.content}</p>
             </div>
       </div>
-      {userId === foundPost.user.id  && <div className=" flex gap-4 mt-4 self-end">  
+      {userId === foundPost.user.id  && <div className=" flex gap-4 mt-4 self-end">
+            <button onClick={handleEdit} ><FaEdit className="w-8 h-8" /></button> 
             <button onClick={handleDelete} ><RiDeleteBin6Fill className="w-8 h-8" /></button>
-            <button onClick={handleEdit} ><FaEdit className="w-8 h-8" /></button>
       </div>}
     </div>
   )

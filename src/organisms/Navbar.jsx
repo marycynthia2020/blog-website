@@ -18,7 +18,7 @@ const Navbar = () => {
             <div className=" hidden md:flex md:gap-8 md:items-center md:justify-between">
                 <ExploreBtn />
                  <HomeBtn />
-                <CreatePostBtn />
+                {isLoggedIn && <CreatePostBtn />}
                 {!isLoggedIn && <SignupBtn />}
                 {isLoggedIn ? <LogoutBtn /> : <LoginBtn />}
             </div>

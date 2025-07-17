@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import CreatePostForm from '../organisms/CreatePostForm'
 import { userContext } from '../contexts/UserSignupContext'
 import { toast, ToastContainer } from 'react-toastify'
-import { createPost } from '../Hooks/CreatePost.query'
+import { createPost } from '../Hooks/CreatePost.mutation'
 import { useNavigate } from 'react-router'
 
 const CreatePost = () => {

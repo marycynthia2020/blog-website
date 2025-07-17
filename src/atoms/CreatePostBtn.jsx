@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router'
-const CreatePostBtn = () => {
 
+const CreatePostBtn = () => {
   return (
    <div>
      <NavLink  to="createpost" className={({ isActive }) =>
