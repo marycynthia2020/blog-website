@@ -4,7 +4,8 @@ import { fetchAllCategories,  } from "../Hooks/FetchCategories.query.jsx"
 const CreatePostForm = ({postFormData, handleChange, handleSubmit}) => {
     const {data, isPending, isError} = fetchAllCategories()
   return (
-    <div className="w-full max-w-[600px] mx-auto shadow-2xl bg-white text-[#67748E] text-lg p-6 rounded-2xl">
+    <div className="w-full px-2">
+        <div className=" w-full max-w-[500px] mx-auto shadow-2xl bg-white text-[#67748E] text-lg p-4 rounded-2xl">
                 <form action="" onSubmit={handleSubmit} >
                     <div className="flex flex-col gap-2 mb-6">
                         <label htmlFor="post-title">Post Title</label>
@@ -31,6 +32,7 @@ const CreatePostForm = ({postFormData, handleChange, handleSubmit}) => {
                    <button type="submit" className="w-full bg-gradient-to-r from-[#e3068e] to-[#a61eae] rounded-lg p-2 text-white mb-4">Post</button>
                 </form>
             </div>
+    </div>
   )
 }
 

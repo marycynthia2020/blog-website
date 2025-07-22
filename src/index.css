@@ -15,6 +15,7 @@ body{
     overflow-x: hidden;
     position: relative;
     /* padding-inline: 16px; */
-    /* padding-top: 96px; */
+    /* margin-top: 96px; */
     background-color: #fbfbfd;
+   
 }

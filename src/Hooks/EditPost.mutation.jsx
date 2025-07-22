@@ -5,8 +5,7 @@ const editPost = async ({id, token, editedPostForm})=>{
         method: "PUT",
         headers: {
             "Authorization": `Bearer ${token}`,
-            "Accept": "multipart/form-data",
-            // "Content-Type": "multipart/form-data",
+            // "Accept": "application/json"
         },
         body: editedPostForm
     })

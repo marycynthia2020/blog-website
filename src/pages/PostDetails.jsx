@@ -79,7 +79,7 @@ const PostDetails = () => {
    } 
 
   return (
-    <div className='flex flex-col gap-4 mb-8 lg:w-[50%] mx-auto px-4 relative'>
+    <div className='flex flex-col gap-4 mb-8 lg:w-[50%] mx-auto px-4 relative '>
       <BackBtn />
       <SinglePostCard  foundPost={foundPost} handleDelete={handleDelete} handleEdit={()=> navigate(`/postdetails/${foundPost.id}/edit`)} userId={userId}  />
       <CommentForm foundPost={foundPost} handleCommenting={handleCommenting} handleCommentChange={handleCommentChange} commentData={commentData} />

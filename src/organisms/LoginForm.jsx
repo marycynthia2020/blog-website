@@ -21,7 +21,6 @@ const LoginForm = ({loginformData, handleSubmit, handleChange}) => {
             <label htmlFor="loginPassword">password</label>
             <div className="border-2 h-10 p-2  flex justify-between items-center">
                 <input type={isPasswordHidden ? "password" : "text"} id="loginPassword" name="password" value={loginformData.password} onChange={handleChange}  placeholder="Enter your password" minLength={5} className=" outline-none w-4/5" />
-                {/* <img src="/images/hide.svg" alt="" width="16px" id="eyeIcon" /> */}
                 {<div onClick={()=> setIsPasswordHidden(!isPasswordHidden)}>{isPasswordHidden? <FiEyeOff /> : <FiEye />}</div>}
             </div>
         </div>

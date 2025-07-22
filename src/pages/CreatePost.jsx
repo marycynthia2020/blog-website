@@ -50,7 +50,7 @@ const CreatePost = () => {
     }, [mutation.data])
 
   return (
-    <div className='w-full max-w-[1440px] mx-auto px-4'>
+    <div className='   '>
       <CreatePostForm postFormData={postFormData} handleChange={handleChange} handleSubmit={handleSubmit} />
       <ToastContainer />
     </div>

@@ -7,6 +7,7 @@ const PageLayout = () => {
   return (
     <div  className='min-h-screen grid grid-rows-[auto_1fr_auto]'>
         <Navbar />
+        <div className='mt-28'></div>
         <Outlet  />
         <Footer />
     </div>

@@ -30,14 +30,11 @@ const EditPost = () => {
             featured_image: null 
     })
         }
-    }, [foundPost])
-   console.log(foundPost)
-   if(isPending) {
-    return <span className="text-center">Loading post...</span>
-   }
-   if(isError) {
-    return <span className="text-center">Error getting post</span>
-   }
+        if(mutation.isSuccess){
+            console.log(mutation.data)
+        }
+    }, [foundPost, mutation.data])
+
     const handleChange = (e)=>{
         const {value, type, name, files} = e.target
         if(type === "file") {
@@ -47,30 +44,49 @@ const EditPost = () => {
     }
     const handleSubmit = (e)=>{
          e.preventDefault()
+          let payloadToSend;
          if(!isLoggedIn){
            toast("Log in to edit post")
            return
          }
-         if(editFormData.title && editFormData.content && editFormData.category_id){
-            console.log(e.target)
-            const newForm = new FormData(e.target)
-            // for(let[key, value] of newForm){
-            //     console.log(key, value)
-            // }
-            mutation.mutate({id: foundPost?.id, token: currentUser?.token, editedPostForm: newForm})
+         if(!editFormData.title || !editFormData.content || !editFormData.category_id ) {
+            toast("All Fields are required")
             return
-         } toast("All Fields are required")
+         }
+         if(editFormData.featured_image instanceof File){
+            const newForm = new FormData()
+            newForm.append('_method', 'PUT');
+            newForm.append("title", editFormData.title)
+            newForm.append("content", editFormData.content)
+            newForm.append("category_id", editFormData.category_id)
+           if (editFormData.featured_image instanceof File) {
+            newForm.append("featured_image", editFormData.featured_image);
+            }
+        
+            for(let [key, value] of newForm.entries()){
+            console.log(key, value)
+            }
+             payloadToSend = newForm;
+         } else{
+            payloadToSend = {
+                title: editFormData.title,
+                content: editFormData.content,
+                category_id: Number(editFormData.category_id), 
+            };
+         }  
+            mutation.mutate({id: foundPost?.id, token: currentUser?.token, editedPostForm: payloadToSend})
+            return
        }
-       useEffect(()=>{
-        if(mutation.isSuccess){
-            // toast("post created ucc")
-            console.log(mutation.data)
-            // queryClient.invalidateQueries({queryKey: ['posts']})
-        }
-       }, [mutation.data])
+    
+    if(isPending) {
+        return <span className="text-center">Loading post...</span>
+   }
+   if(isError) {
+        return <span className="text-center">Error getting post</span>
+   }
 
   return (
-   <div className='w-full max-w-[1440px] mx-auto px-4'>
+   <div className=''>
       <CreatePostForm postFormData={editFormData} handleChange={handleChange} handleSubmit={handleSubmit} />
       <ToastContainer />
     </div>
