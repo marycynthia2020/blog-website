@@ -1,13 +1,14 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
 import Hero from '../molecules/Hero'
 import { fetchAllPosts } from '../Hooks/FetchPosts.query'
 import ImageBlogCard from '../molecules/ImageBlogCard'
 import NoImageBlogCard from '../molecules/NoImageBlogCard'
 import Pagination from '../utils/Pagination'
+import { userContext } from '../contexts/UserSignupContext'
 
 const Home = () => {
+  const {result, setResult} = useContext(userContext)
   const {data, isPending, isError, error, isSuccess} = fetchAllPosts()
-  const [result, setResult] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 18
   const totalPages = Math.ceil((data?.length || 0) / itemsPerPage);
@@ -38,7 +39,6 @@ const Home = () => {
   if(isError) {
     return <span className='font-bold text-4xl text-center '>{error.message}</span>
   } 
-  console.log(result?.length, 12)
   return (
     <div className=''>
       <Hero />

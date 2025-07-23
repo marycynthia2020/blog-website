@@ -24,14 +24,14 @@ const Navbar = () => {
                 {isLoggedIn ? <LogoutBtn /> : <LoginBtn />}
             </div>
             <div className='flex items-center gap-4 md:hidden'>
-              {isLoggedIn ? <LogoutBtn /> : <LoginBtn />}
+              <ExploreBtn />
               <Hamburger isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
             </div>
         </nav>
         {isMenuOpen && <nav className='absolute flex flex-col h-screen gap-y-4 bg-white w-1/2 px-6 mt-6 py-6' onClick={()=>setIsMenuOpen(false)}>
             <HomeBtn />
             {isLoggedIn && <CreatePostBtn />}
-            <ExploreBtn />
+            {isLoggedIn ? <LogoutBtn /> : <LoginBtn />}
           </nav>}
 
     </section>
