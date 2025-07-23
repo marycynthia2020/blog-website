@@ -53,7 +53,7 @@ const Login = () => {
 
   return (
     <div className='w-full px-4'>
-      <LoginForm loginformData={loginformData} handleChange={handleChange} handleSubmit={handleSubmit} />
+      <LoginForm loginformData={loginformData} handleChange={handleChange} handleSubmit={handleSubmit} isPending={mutation.isPending} />
       <ToastContainer />
     </div>
   )

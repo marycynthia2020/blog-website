@@ -1,7 +1,7 @@
 
 import { fetchAllCategories,  } from "../Hooks/FetchCategories.query.jsx"
 
-const CreatePostForm = ({postFormData, handleChange, handleSubmit}) => {
+const CreatePostForm = ({postFormData, handleChange, handleSubmit, postIsPending, keyFunction}) => {
     const {data, isPending, isError} = fetchAllCategories()
   return (
     <div className="w-full px-2">
@@ -29,7 +29,7 @@ const CreatePostForm = ({postFormData, handleChange, handleSubmit}) => {
                          {/* < <label htmlFor="image">featured Image</label> */}
                         <input type="file" name="featured_image" id="image"  onChange={handleChange} />
                    </div>
-                   <button type="submit" className="w-full bg-gradient-to-r from-[#e3068e] to-[#a61eae] rounded-lg p-2 text-white mb-4">Post</button>
+                   <button type="submit" className="w-full bg-gradient-to-r from-[#e3068e] to-[#a61eae] rounded-lg p-2 text-white mb-4">{postIsPending ? "Processing..." : keyFunction}</button>
                 </form>
             </div>
     </div>

@@ -51,7 +51,7 @@ const CreatePost = () => {
 
   return (
     <div className='   '>
-      <CreatePostForm postFormData={postFormData} handleChange={handleChange} handleSubmit={handleSubmit} />
+      <CreatePostForm postFormData={postFormData} handleChange={handleChange} handleSubmit={handleSubmit} postIsPending={mutation.isPending} keyFunction={"Post"} />
       <ToastContainer />
     </div>
   )

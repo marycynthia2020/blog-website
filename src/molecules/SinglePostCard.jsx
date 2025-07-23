@@ -13,7 +13,7 @@ const SinglePostCard = ({foundPost, handleDelete, handleEdit, userId}) => {
             </div>
       </div>
       {userId === foundPost.user.id  && <div className=" flex gap-4 mt-4 self-end">
-            <button onClick={handleEdit} ><FaEdit className="w-8 h-8" /></button> 
+            {/* <button onClick={handleEdit} ><FaEdit className="w-8 h-8" /></button>  */}
             <button onClick={handleDelete} ><RiDeleteBin6Fill className="w-8 h-8" /></button>
       </div>}
     </div>

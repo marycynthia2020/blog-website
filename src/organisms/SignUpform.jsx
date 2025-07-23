@@ -3,7 +3,7 @@ import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
-const SignUpform = ({handleChange, handleSubmit, signupFormData}) => {
+const SignUpform = ({handleChange, handleSubmit, signupFormData, isPending}) => {
     const [isPasswordHidden, setIsPasswordHidden] = useState(true)
   return (
       <div className=" w-full max-w-[600px] mx-auto bg-white rounded-2xl p-6 shadow-2xl text-[#67748E] text-lg">
@@ -41,7 +41,7 @@ const SignUpform = ({handleChange, handleSubmit, signupFormData}) => {
               <input type="checkbox" id="agreement"  className=" outline-none accent-[#a61eae]" />
               <label htmlFor="agreement">I accepted all terms and conditions</label>
           </div>
-          <button type="submit" className="w-full bg-gradient-to-r from-[#e3068e] to-[#a61eae] rounded-lg p-2 text-white mb-4">Sign Up</button>
+          <button type="submit" className="w-full bg-gradient-to-r from-[#e3068e] to-[#a61eae] rounded-lg p-2 text-white mb-4">{isPending ? "Processing...": "Sign Up"}</button>
           <p  className="text-center text-[#a61eae] ">Already have an account? <Link to= "/login" className="text-[#e3068e]">Sign in</Link></p>
       </form>
       <ToastContainer />

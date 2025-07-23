@@ -16,7 +16,10 @@ const Navbar = () => {
   return (
     <section className="z-[999] fixed w-full shadow-lg py-6 bg-white  mb-6 md:mb-10 text-[#777777] text-lg ">
         <nav className=" px-4 font-semibold max-w-[1440px] mx-auto text-[#777777] text-lg flex items-center justify-between">
-            <Logo />
+            <div className='flex items-center gap-4'>
+              <Hamburger isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+              <Logo />
+            </div>
             <div className=" hidden md:flex md:gap-8 md:items-center md:justify-between">
                 <ExploreBtn />
                  <HomeBtn />
@@ -27,7 +30,7 @@ const Navbar = () => {
             </div>
             <div className='flex items-center gap-4 md:hidden'>
               <ExploreBtn />
-              <Hamburger isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+              {/* <Hamburger isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} /> */}
             </div>
         </nav>
         {isMenuOpen && <nav className='absolute flex flex-col h-screen gap-y-4 bg-white w-1/2 px-6 mt-6 py-6' onClick={()=>setIsMenuOpen(false)}>

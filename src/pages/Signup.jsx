@@ -50,7 +50,7 @@ const Signup = () => {
   
   return (
     <div className='w-full px-4 '>
-      <SignUpform handleChange={handleChange} handleSubmit={handleSubmit} signupFormData={signupFormData} />
+      <SignUpform handleChange={handleChange} handleSubmit={handleSubmit} signupFormData={signupFormData} isPending={mutation.isPending} />
       <ToastContainer />
     </div>
   )

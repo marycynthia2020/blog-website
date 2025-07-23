@@ -87,7 +87,7 @@ const EditPost = () => {
 
   return (
    <div className=''>
-      <CreatePostForm postFormData={editFormData} handleChange={handleChange} handleSubmit={handleSubmit} />
+      <CreatePostForm postFormData={editFormData} handleChange={handleChange} handleSubmit={handleSubmit} postIsPending={mutation.isPending} keyFunction={"Edit"} />
       <ToastContainer />
     </div>
   )

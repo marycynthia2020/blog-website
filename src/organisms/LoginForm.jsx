@@ -4,7 +4,7 @@ import { FiEyeOff } from "react-icons/fi"
 import { Link } from 'react-router'
 import { ToastContainer } from "react-toastify";
 
-const LoginForm = ({loginformData, handleSubmit, handleChange}) => {
+const LoginForm = ({loginformData, handleSubmit, handleChange, isPending}) => {
    const [isPasswordHidden, setIsPasswordHidden] = useState(true)
   return (
     <div
@@ -24,7 +24,7 @@ const LoginForm = ({loginformData, handleSubmit, handleChange}) => {
                 {<div onClick={()=> setIsPasswordHidden(!isPasswordHidden)}>{isPasswordHidden? <FiEyeOff /> : <FiEye />}</div>}
             </div>
         </div>
-        <button type="submit" className="w-full bg-gradient-to-r from-[#e3068e] to-[#a61eae] rounded-lg p-2 text-white mb-4">Sign In</button>
+        <button type="submit" className="w-full bg-gradient-to-r from-[#e3068e] to-[#a61eae] rounded-lg p-2 text-white mb-4">{isPending ? "Processing..." : "Sign In"}</button>
         <p  className="text-center text-[#a61eae]">Don't have an account yet? <Link to="/signup" className="text-[#e3068e]">Sign up</Link></p>
     </form>
     <ToastContainer />
