@@ -8,6 +8,7 @@ import CreatePostBtn from '../atoms/CreatePostBtn'
 import Hamburger from '../atoms/Hamburger'
 import { userContext } from '../contexts/UserSignupContext'
 import LogoutBtn from '../atoms/LogoutBtn'
+import MyBlog from '../atoms/MyBlog'
 
 const Navbar = () => {
   const {isLoggedIn} = useContext(userContext)
@@ -20,6 +21,7 @@ const Navbar = () => {
                 <ExploreBtn />
                  <HomeBtn />
                 {isLoggedIn && <CreatePostBtn />}
+                {isLoggedIn && <MyBlog />}
                 {!isLoggedIn && <SignupBtn />}
                 {isLoggedIn ? <LogoutBtn /> : <LoginBtn />}
             </div>
@@ -31,6 +33,7 @@ const Navbar = () => {
         {isMenuOpen && <nav className='absolute flex flex-col h-screen gap-y-4 bg-white w-1/2 px-6 mt-6 py-6' onClick={()=>setIsMenuOpen(false)}>
             <HomeBtn />
             {isLoggedIn && <CreatePostBtn />}
+            {isLoggedIn && <MyBlog />}
             {isLoggedIn ? <LogoutBtn /> : <LoginBtn />}
           </nav>}
 
