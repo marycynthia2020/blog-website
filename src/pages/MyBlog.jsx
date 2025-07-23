@@ -20,7 +20,7 @@ console.log(blogs)
     } 
   return (
     <div  className='max-w-[1440px] mb-10 mx-auto px-4 mt-10'>
-        <h1 className="text-2xl md:text-3xl  font-bold mb-2">My Blogs</h1>
+        <h3 className="text-2xl md:text-3xl  font-bold mb-2">My Blogs</h3>
         <div className=' col-span-5 grid lg:grid-cols-2 gap-4 order-2 '>
               {blogs?.length > 0 
               ? blogs?.map(post =>(
