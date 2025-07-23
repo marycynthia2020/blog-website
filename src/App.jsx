@@ -9,7 +9,6 @@ import Login from './pages/Login'
 import { useContext } from 'react'
 import { userContext } from './contexts/UserSignupContext'
 import EditPost from './pages/EditPost'
-import PostLayout from './templates/PostLayout'
 import MyBlog from './pages/MyBlog'
 
 function App() {

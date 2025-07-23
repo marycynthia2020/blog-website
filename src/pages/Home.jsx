@@ -34,7 +34,7 @@ const Home = () => {
   
 
   if(isPending){
-    return  <span className='font-bold text-4xl text-center animate-pulse '>Loading...</span>
+    return  <span className='font-bold text-2xl md:text-3xl text-center animate-pulse '>Loading...</span>
   }
   if(isError) {
     return <span className='font-bold text-4xl text-center '>{error.message}</span>
