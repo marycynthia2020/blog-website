@@ -10,6 +10,8 @@ import { useContext } from 'react'
 import { userContext } from './contexts/UserSignupContext'
 import EditPost from './pages/EditPost'
 import MyBlog from './pages/MyBlog'
+import ProtectedRoutes from './templates/ProtectedRoutes'
+import NotFound from './pages/NotFound'
 
 function App() {
    const {isLoggedIn} = useContext(userContext)
@@ -24,9 +26,12 @@ function App() {
             <Route  path='/postdetails/:id' element={<PostDetails />} />
             <Route path='/postdetails/:id/edit' element={<EditPost />} />
           </Route>
-          <Route path='createpost' element={<CreatePost />} />
-          <Route path='/myblog' element={<MyBlog />} />
+         <Route element={<ProtectedRoutes isLoggedIn={isLoggedIn} />}>
+            <Route path='createpost' element={<CreatePost />} />
+            <Route path='/myblog' element={<MyBlog />} />
+         </Route>
         </Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
   )
