@@ -1,22 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react'
 import LoginForm from '../organisms/LoginForm'
-import { useMutation } from '@tanstack/react-query'
-import { loginUser } from '../utils/LoginUser'
 import { toast, ToastContainer } from 'react-toastify'
 import { useNavigate } from 'react-router'
 import { userContext } from '../contexts/UserSignupContext'
+import { useLoginUser } from '../Hooks/useLoginUser.mutation'
 
 const Login = () => {
-  const {isLoggedIn, setISLoggedIn} = useContext(userContext)
+  const {setISLoggedIn} = useContext(userContext)
   const navigate = useNavigate()
   const [loginformData, setLoginformData] = useState({
     email: "",
     password: ""
   })
 
-  const mutation = useMutation({
-    mutationFn: loginUser
-  })
+  const mutation = useLoginUser()
 
   const handleChange = (e) => {
     setLoginformData(prev => {
