@@ -42,7 +42,7 @@ const Home = () => {
   return (
     <div className=''>
       <Hero />
-      <div className='max-w-[1440px] mb-2 mx-auto  px-8  '><h3 className="text-2xl md:text-3xl  font-bold mb-2">Latest News</h3></div>
+      <div className='max-w-[1440px] mb-2 mx-auto  px-8  '><h3 className="text-2xl md:text-3xl  font-bold mb-2 text-[#344767]">Latest News</h3></div>
       <div className='max-w-[1440px] mb-10 mx-auto grid lg:grid-cols-8 gap-4 px-4   '>
           <div className='col-span-5 grid lg:grid-cols-2 gap-4  '>
             {result?.slice(0, 2).map(post =>(

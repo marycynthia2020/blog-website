@@ -14,7 +14,7 @@ const Categories = ({iscategoryHidden, setIsCategoryHidden, categories}) => {
   return (
     <>
     {!iscategoryHidden && <div className="flex flex-col gap-2 mb-6 absolute p-2 rounded-md mt-6 bg-white shadow-2xl">
-        <div className="flex flex-col gap-4" >
+        <div className="flex flex-col gap-4 px-5 py-4" >
             { categories && categories.data.map(category => (
                 <p key={category.id} className="cursor-pointer hover:text-[#e3068e]" onClick={()=> filterNews(category.name)}>{category.name}</p>
             ))} 

@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import { NavLink } from 'react-router'
 import { userContext } from '../contexts/UserSignupContext'
-import { BsZoomIn } from 'react-icons/bs'
 
 const LogoutBtn = () => {
   const {isLoggedIn, setISLoggedIn} = useContext(userContext)
