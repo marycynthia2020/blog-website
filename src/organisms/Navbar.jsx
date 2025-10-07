@@ -37,7 +37,7 @@ const Navbar = () => {
             {isLoggedIn && <CreatePostBtn />}
             {isLoggedIn && <MyBlog />}
             {isLoggedIn ? <LogoutBtn /> : <LoginBtn />}
-           <ExploreBtn />
+           {/* <ExploreBtn /> */}
           </nav>}
 
     </section>
