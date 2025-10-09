@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../organisms/Navbar'
 import { Outlet } from 'react-router'
 import Footer from '../organisms/Footer'
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom"
 
 const PageLayout = () => {
   const location = useLocation();
